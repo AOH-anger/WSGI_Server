@@ -28,7 +28,7 @@ class WSGIServer(object):
             #等待新客户端到来
             self.clientSocket, client_address = self.listenSocket.accept()
 
-            #方法2，多进程服务器，并发服务器于多个客户端
+            #多进程服务器，并发服务器于多个客户端
             newClientProcess = Process(target = self.handleRequest)
             newClientProcess.start()
 
